@@ -1,5 +1,4 @@
 import moonlander.library.*;
-
 // Minim must be imported when using Moonlander with soundtrack.
 import ddf.minim.*;
 Moonlander moonlander;
@@ -8,9 +7,12 @@ int col = 0;
 boolean bw = false;
 
 void setup() {
-    // Parameters: PApplet, filename (file should be in sketch's folder), 
-    // beats per minute, rows per beat
-    moonlander = Moonlander.initWithSoundtrack(this, "m.mp3", 103, 4);
+    /* Parameters: PApplet, filename (file should be in sketch's folder), beats 
+    per minute, rows per beat */
+    moonlander = 
+        Moonlander.initWithSoundtrack(this, 
+                                      "Stumblefather–Intermission2-Vejo!.mp3", 
+                                      103, 4);
     // change the size and background color of screen
     size(1280,720,P3D);
     background(0);
@@ -83,43 +85,55 @@ void draw() {
     }
     
     if((int)value == 9) {
-      rotateY(PI*(float)y);
-      rotateZ(PI*(float)x);
-      if((int)colorValue != 1){
-        drawCircle5((width/2),(height/2),(float)sizeValue);
+      rotateY(PI * (float)y);
+      rotateZ(PI * (float)x);
+      if((int)colorValue != 1) {
+        drawCircle5((width / 2),
+                    (height / 2),
+                    (float)sizeValue);
       }
-      if((int)colorValue != 2){
-        drawCircle5((width/2 + 4*(int)speedValue),(height/2 + 150),(float)sizeValue);
+      if((int)colorValue != 2) {
+        drawCircle5((width / 2 + 4 * (int)speedValue),
+                    (height / 2 + 150),
+                    (float)sizeValue);
       }
-      if((int)colorValue != 3){
-        drawCircle5((width/2 + 8*(int)speedValue),(height/2 + 300),(float)sizeValue);
+      if((int)colorValue != 3) {
+        drawCircle5((width / 2 + 8 * (int)speedValue),
+                    (height / 2 + 300), 
+                    (float)sizeValue);
       }
-      if((int)colorValue != 4){
-        drawCircle5((width/2 - 4*(int)speedValue),(height/2 - 150),(float)sizeValue);
+      if((int)colorValue != 4) {
+        drawCircle5((width / 2 - 4 * (int)speedValue),
+                    (height / 2 - 150),
+                    (float)sizeValue);
       }
-      if((int)colorValue != 5){
-        drawCircle5((width/2 - 8*(int)speedValue),(height/2 - 300),(float)sizeValue);
+      if((int)colorValue != 5) {
+        drawCircle5((width / 2 - 8 * (int)speedValue),
+                    (height / 2 - 300),
+                    (float)sizeValue);
       }
-      if((int)colorValue != 6){
-      drawCircle5((width/2 + 16*(int)speedValue),(height/2 + 900),(float)sizeValue);
+      if((int)colorValue != 6) {
+        drawCircle5((width / 2 + 16 * (int)speedValue),
+                    (height / 2 + 900),
+                    (float)sizeValue);
       }
-      if((int)colorValue != 7){
-        drawCircle5((width/2 - 16*(int)speedValue),(height/2 - 450),(float)sizeValue);
+      if((int)colorValue != 7) {
+        drawCircle5((width / 2 - 16 * (int)speedValue),
+                    (height / 2 - 450),
+                    (float)sizeValue);
       }
-      if((int)colorValue != 8){
-      drawCircle5((width/2 + 32*(int)speedValue),(height/2 + 750),(float)sizeValue);
+      if((int)colorValue != 8) {
+        drawCircle5((width / 2 + 32 * (int)speedValue),
+                    (height/2 + 750),(float)sizeValue);
       }
-      if((int)colorValue != 9){
-        drawCircle5((width/2 - 32*(int)speedValue),(height/2 + 600),(float)sizeValue);
+      if((int)colorValue != 9) {
+        drawCircle5((width / 2 - 32 * (int)speedValue),
+                    (height/2 + 600),(float)sizeValue);
       }
-      
-      
-      
     }
     
     if((int)value == 10) {
       background((int) colorValue);
-      //rotateY(PI*(float)y);
       rotateZ(PI*(float)x);
      drawCircle6((width/2 + (int)speedValue),(height/2 + (int)y),(int)sizeValue,
      (int)colorValue);
@@ -142,29 +156,9 @@ void draw() {
       textSize(32);
       text("GeomeX", 50, 615);
       textSize(10);
-      text("Music:  PSICOTROPICODELIA MUSIC - ALIENAQTOR", 50, 635);
-      
+      text("Music: Stumblefather – Intermission 2 - Vejo!", 50, 635);
     }
-
-     
-     
-    //int x = width/2;
-    //if(ypos > height/3){
-    //  x = ypos - height - 15 + 1;
-    //}
-    
-    
-    //rotateY(PI/4);
-    //drawCircle(x,height/2,512);
-    // Get current value of a track
-    
-    
-    //rect((int)value*10,0,40,30);
-    //fill(255,0,0);
-    //ellipse((int)value*10,ypos,30,30);
-      ypos = ypos + 10;
-    // Use it somehow
-    
+    ypos = ypos + 10;
 }
 
 void branch(float len,float theta,float m) {
@@ -185,6 +179,7 @@ void branch(float len,float theta,float m) {
     popMatrix();
   }
 }
+
 void branch2(float len,float theta,float m,int col) {
   stroke(255-col);
   line(0, 0, 0, -m*len);
@@ -249,8 +244,6 @@ void drawCircle5(float x, float y, float radius) {
   }
 }
 
-
-
 void drawCircle3(float x, float y, float radius) {
   ellipse(x, y, radius, radius);
   if(radius > 16) {
@@ -271,4 +264,3 @@ void drawCircle6(float x, float y, float radius, int col) {
     drawCircle3(x, y - radius/2, radius/2);
   }
 }
-
